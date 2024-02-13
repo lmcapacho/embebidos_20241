@@ -6,12 +6,12 @@ String morse_array[26] = {".-", "-...", "-.-.", "-..", ".", "..-.",  // A, B, C,
                             "...", "-", "..-", "...-", ".--", "-..-",   // S, T, U, V, W, X
                             "-.--", "--.."};  
 
-void init()
+void Morse::begin()
 {
-    pinMode(2, OUTPUT);
+    pinMode(pin, OUTPUT);
 }
 
-void write(char c)
+void Morse::write(char c)
 {
   String code = morse_array[c-65];
 
@@ -26,7 +26,7 @@ void write(char c)
   return 1;
 }
 
-void dot()
+void Morse::dot()
 {
   digitalWrite(2, HIGH);
   delay(1000);
@@ -34,7 +34,7 @@ void dot()
   delay(1000);
 }
 
-void dash()
+void Morse::dash()
 {
   digitalWrite(2, HIGH);
   delay(3000);

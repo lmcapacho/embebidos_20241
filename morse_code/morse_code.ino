@@ -1,14 +1,16 @@
 #include "morse.h"
 
+Morse morse;
+
 void setup()
 {
-    init();    
+    morse.begin();    
 }
 
 void loop()
 {
-    write('H');
-    write('O');
-    write('L');
-    write('A');    
+    morse.write('H');
+    morse.write('O');
+    morse.write('L');
+    morse.write('A');    
 }
