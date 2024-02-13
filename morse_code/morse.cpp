@@ -11,7 +11,7 @@ void Morse::begin()
     pinMode(pin, OUTPUT);
 }
 
-void Morse::write(char c)
+size_t Morse::write(uint8_t c)
 {
   String code = morse_array[c-65];
 

@@ -9,8 +9,5 @@ void setup()
 
 void loop()
 {
-    morse.write('H');
-    morse.write('O');
-    morse.write('L');
-    morse.write('A');    
+    morse.print("HOLA");    
 }

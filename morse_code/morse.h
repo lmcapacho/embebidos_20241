@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 
-class Morse
+class Morse: public Print
 {
 private:
   uint8_t pin = 2;
@@ -17,7 +17,7 @@ private:
   void dash();
 
 public:
-  void write(char c);  
+  size_t write(uint8_t c);  
   
   void begin();
 };  
