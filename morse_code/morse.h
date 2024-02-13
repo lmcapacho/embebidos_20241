@@ -20,4 +20,5 @@ public:
   size_t write(uint8_t c);  
   
   void begin();
+  void begin(uint8_t _pin);
 };  

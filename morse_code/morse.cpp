@@ -11,6 +11,12 @@ void Morse::begin()
     pinMode(pin, OUTPUT);
 }
 
+void Morse::begin(uint8_t _pin)
+{
+    pin = _pin;
+    begin();
+}
+
 size_t Morse::write(uint8_t c)
 {
   String code = morse_array[c-65];
@@ -28,16 +34,16 @@ size_t Morse::write(uint8_t c)
 
 void Morse::dot()
 {
-  digitalWrite(2, HIGH);
+  digitalWrite(pin, HIGH);
   delay(1000);
-  digitalWrite(2, LOW);
+  digitalWrite(pin, LOW);
   delay(1000);
 }
 
 void Morse::dash()
 {
-  digitalWrite(2, HIGH);
+  digitalWrite(pin, HIGH);
   delay(3000);
-  digitalWrite(2, LOW);
+  digitalWrite(pin, LOW);
   delay(1000);
 }
