@@ -4,6 +4,12 @@ Menu::Menu()
 {
   index = 0;
   n_items = 0;
+  MenuStream = NULL;
+}
+
+void Menu::begin(Stream &s)
+{
+  MenuStream = &s;
 }
 
 void Menu::addItem(String text)
@@ -18,7 +24,8 @@ void Menu::up()
 {
   if(index < n_items-1){
     index++;
-    Serial.println(items_text[index]);
+    if ( MenuStream != NULL )
+      MenuStream->println(items_text[index]);
   }
 }
 
@@ -26,6 +33,7 @@ void Menu::down()
 {
   if(index > 0){  
     index--;
-    Serial.println(items_text[index]);
+    if ( MenuStream != NULL )
+      MenuStream->println(items_text[index]);
   }
 }

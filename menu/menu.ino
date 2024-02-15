@@ -5,6 +5,8 @@ Menu menu;
 void setup() {
   Serial.begin(115200);
   
+  menu.begin(Serial);
+
   menu.addItem("Option 0");
   menu.addItem("Option 1");
   menu.addItem("Option 2");
