@@ -18,6 +18,7 @@ void Menu::up()
 {
   if(index < n_items-1){
     index++;
+    Serial.println(items_text[index]);
   }
 }
 
@@ -25,5 +26,6 @@ void Menu::down()
 {
   if(index > 0){  
     index--;
+    Serial.println(items_text[index]);
   }
 }
