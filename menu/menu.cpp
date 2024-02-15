@@ -1,5 +1,11 @@
 #include "menu.h"
 
+Menu::Menu() 
+{
+  index = 0;
+  n_items = 0;
+}
+
 void Menu::addItem(String text)
 {
   if(n_items < 10) {
